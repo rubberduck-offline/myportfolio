@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aileen's Portfolio Website</title>
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="views.html">Views</a></li>
+                <li><a href="curiosity.html">Curiosity</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="blog-container">
+        <h1>--- Recent Thoughts ---</h1>
+
+        <aside id="category-filter">
+            <h3>Categories</h3>
+            <select id="categoryDropdown">
+                <option value="all">All</option>
+                <option value="english">English</option>
+                <option value="chinese">Chinese</option>
+                <option value="french">French</option>
+            </select>
+        </aside>                       
+        <br><hr><br>
+
+        <!-- wrap article around <a> to make the entire <article> elements clickable -->
+        <a href="path-to-full-blog-post.html" class="blog-link" aria-label="Read more about Blog Post Title"> 
+            <article class="blog-post" data-category="English">
+                <img src="path_to_image.jpg" alt="Brief description of image">
+                <header>
+                    <h2>Blog Post Title</h2>
+                </header>
+                <p><b>A short introduction or description of the blog post.</b></p>
+                <footer>
+                    <p>Posted on: <time datetime="2023-10-24">October 24, 2023</time></p>
+                </footer>
+            </article>
+        </a> 
+        <br><hr><br>
+
+        <a href="path-to-full-blog-post.html" class="blog-link" aria-label="Read more about Blog Post Title"> 
+            <article class="blog-post" data-category="Chinese">
+                <img src="path_to_image.jpg" alt="Brief description of image">
+                <header>
+                    <h2>Blog Post Title</h2>
+                </header>
+                <p><i>A short introduction or description of the blog post.</i></p>
+                <footer>
+                    <p>Posted on: <time datetime="2023-10-24">October 24, 2023</time></p>
+                </footer>
+            </article>
+        </a>    
+        <br><hr><br>    
+
+        <a href="path-to-full-blog-post.html" class="blog-link" aria-label="Read more about Blog Post Title"> 
+            <article class="blog-post" data-category="French">
+                <img src="path_to_image.jpg" alt="Brief description of image">
+                <header>
+                    <h2>Blog Post Title</h2>
+                </header>
+                <p><strong><em>A short introduction or description of the blog post.</em></strong></p>
+                <footer>
+                    <p>Posted on: <time datetime="2023-10-24">October 24, 2023</time></p>
+                </footer>
+            </article>
+        </a>
+        <br><hr><br>
+
+        <h2>Find me also on Xiaohongshu</h2>
+        <iframe src="https://www.xiaohongshu.com/user/profile/5e765e6400000000010089f9" 
+        width="600" 
+        height="400" 
+        title="My Social Media Profile" 
+        loading="lazy">
+        </iframe>
+
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://www.instagram.com/yourInstagramUsername/" target="_blank" rel="noopener noreferrer"><img src="path_to_instagram_icon.png" alt="Instagram icon"> Instagram</a></li>
+            <li><a href="https://github.com/yourGithubUsername" target="_blank" rel="noopener noreferrer"><img src="path_to_github_icon.png" alt="GitHub icon"> GitHub</a></li>
+            <li><a href="https://medium.com/@yourMediumUsername" target="_blank" rel="noopener noreferrer"><img src="path_to_medium_icon.png" alt="Medium icon"> Medium</a></li>
+        </ul>
+        <p>&copy; 2023 Aileen Fong</p>
+    </footer>
+    
+
+</body>
