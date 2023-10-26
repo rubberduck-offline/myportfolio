@@ -6,20 +6,20 @@
     <title>Aileen's Portfolio Website</title> 
 </head>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="views.html">Views</a></li>
-            <li><a href="curiosity.html">Curiosity</a></li>
-            <li><a href="experiments.html">Experiments</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
 <body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="views.html">Views</a></li>
+                <li><a href="curiosity.html">Curiosity</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Einstein's famous formula -->
     <h2>Einstein's Famous Formula</h2>
@@ -53,11 +53,11 @@
     <!-- Demonstrating <code> and <pre> -->
     <h2>Code and Pre Example</h2>
     <pre>
-<code>
-    function helloWorld() {
-        alert("Hello, World!");
-    }
-</code>
+        <code> 
+            function helloWorld() {
+            alert("Hello, World!");
+            }
+        </code>
     </pre>
 
     <!-- Demonstrating <audio>, <video>, and <source> -->
@@ -101,7 +101,9 @@
         <p>This is a template. It won't be displayed unless used in a script.</p>
     </template>
 
-    <table border="5">
+    <!-- Error: The border attribute on the table element is obsolete. -->
+    <!-- This should be done in CSS but CSS is not applicable for this assignment -->
+    <table border="1">
         <caption>Sample Table</caption>
         <colgroup>
             <col style="background-color: yellow;" span="1">
