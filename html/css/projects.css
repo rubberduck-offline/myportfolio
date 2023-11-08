@@ -1,0 +1,27 @@
+/* projects.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@400;700&display=swap');
+@import url('global.css');
+
+/* Grid layout for projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* This will create as many columns as can fit in the container, with each column being at least 300px wide and stretching to fill available space */
+    gap: 1rem; /* This is the space between each grid item */
+    padding: 1rem; /* Optional: Adds some space inside the grid container */
+}
+
+.project-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent */
+}
+
+.project-link article {
+    border: 1px solid #ccc; /* Optional: Adds a border to each project article */
+    padding: 1rem; /* Adds some padding inside each project article */
+    border-radius: 8px; /* Optional: Rounds the corners of the border */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.project-link article:hover {
+    transform: translateY(-5px); /* Raises the article slightly on hover */
+}

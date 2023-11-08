@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aileen's Portfolio Website</title> 
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="views.html">Views</a></li>
+                <li><a href="curiosity.html">Curiosity</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Einstein's famous formula -->
+    <h2>Einstein's Famous Formula</h2>
+    <math>
+        <mi>E</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <mo>×</mo>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+      </math>
+      
+    <!-- Demonstrating <canvas> -->
+    <h2>Canvas Example</h2>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(20, 20, 150, 75);
+    </script>
+
+    <!-- Demonstrating <svg> -->
+    <h2>SVG Example</h2>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+
+    <!-- Demonstrating <code> and <pre> -->
+    <h2>Code and Pre Example</h2>
+    <pre>
+        <code> 
+            function helloWorld() {
+            alert("Hello, World!");
+            }
+        </code>
+    </pre>
+
+    <!-- Demonstrating <audio>, <video>, and <source> -->
+    <h2>Audio and Video Example</h2>
+    <audio controls>
+        <source src="path_to_audio_file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <video width="320" height="240" controls>
+        <source src="path_to_video_file.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <!-- Other Tags -->
+    <h2>Other Elements Example</h2>
+    <form>
+        <fieldset>
+            <legend>Select your favorite fruit and browser:</legend>
+            <select>
+                <optgroup label="Citrus Fruits">
+                    <option>Orange</option>
+                    <option>Lemon</option>
+                </optgroup>
+                <optgroup label="Berries">
+                    <option>Strawberry</option>
+                    <option>Blueberry</option>
+                </optgroup>
+            </select>
+
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Google Chrome">
+                <option value="Safari">
+            </datalist>
+        </fieldset>
+    </form>
+    <br>
+
+    <template>
+        <p>This is a template. It won't be displayed unless used in a script.</p>
+    </template>
+
+    <!-- Error: The border attribute on the table element is obsolete. -->
+    <!-- This should be done in CSS but CSS is not applicable for this assignment -->
+    <table border="1">
+        <caption>Sample Table</caption>
+        <colgroup>
+            <col style="background-color: yellow;" span="2">
+        </colgroup>
+        <tr>
+            <th>Fruit</th>
+            <th>Browser</th>
+        </tr>
+        <tr>
+            <td>Fruit 1</td>
+            <td>Brower 1</td>
+        </tr>
+    </table>
+    <br>
+
+    <figure>
+        <img src="path_to_image.jpg" alt="Sample Image">
+        <figcaption>This is a sample image caption.</figcaption>
+    </figure>
+
+    <footer>
+        <ul>
+            <li><a href="https://www.instagram.com/yourInstagramUsername/" target="_blank" rel="noopener noreferrer"><img src="path_to_instagram_icon.png" alt="Instagram icon"> Instagram</a></li>
+            <li><a href="https://github.com/yourGithubUsername" target="_blank" rel="noopener noreferrer"><img src="path_to_github_icon.png" alt="GitHub icon"> GitHub</a></li>
+            <li><a href="https://medium.com/@yourMediumUsername" target="_blank" rel="noopener noreferrer"><img src="path_to_medium_icon.png" alt="Medium icon"> Medium</a></li>
+        </ul>
+        <p>&copy; 2023 Aileen Fong</p>
+    </footer>
+    
+</body>
+</html>
