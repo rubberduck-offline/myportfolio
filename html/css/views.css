@@ -1,0 +1,65 @@
+/* views.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@400;700&display=swap');
+@import url('global.css');
+
+.blog-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* 200px for the sidebar and the rest for the content */
+    gap: 1rem; /* Space between sidebar and content */
+    padding: 1rem; /* Optional: adds padding around the entire layout */
+}
+
+#category-filter {
+    background-color: #f2f2f2; /* Light grey background for the sidebar */
+    padding: 1rem;
+    border-radius: 5px;
+    height: fit-content; /* Makes the sidebar height fit its content */
+}
+
+.blog-posts {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    gap: 1rem; /* Space between items */
+    padding: 1rem 0; /* Top and bottom padding */
+    align-items: flex-start; /* Align items at the start of the cross axis */
+}
+
+
+.blog-post {
+    /* Styles for each blog post */
+    flex: 0 0 auto; /* Do not grow, do not shrink, and don't allow wrapping to next line */
+    min-width: 250px; /* Minimum width of each post */
+    
+    background-color: #ffffff; /* White background for the post */
+    padding: 20px;
+    margin-bottom: 1rem; /* Space between posts */
+    border-radius: 5px; /* Rounded corners for the post */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Simple shadow for depth */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.blog-post img {
+    width: 100%; /* Ensures the image takes up all available width */
+    height: 250px; /* Set a fixed height for uniformity, adjust as needed */
+    object-fit: cover; /* Ensures the image covers the area, cropping as necessary without distorting */
+    display: block;
+}
+
+.blog-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent elements */
+    display: block; /* Makes the entire link area clickable */
+}
+
+.blog-post:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Larger shadow when hovered */
+}
+
+@media (max-width: 768px) {
+    .blog-layout {
+        grid-template-columns: 1fr; /* Stack sidebar and main content on smaller screens */
+    }
+    #category-filter {
+        margin-bottom: 1rem; /* Space between the now-stacked sidebar and content */
+    }
+}
