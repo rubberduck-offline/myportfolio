@@ -1,0 +1,21 @@
+/* about.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@400;700&display=swap');
+@import url('global.css');
+
+body {
+    display: block; /* Change display back to default */
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    min-height: 100vh; /* Ensures the body takes at least the height of the viewport */
+    margin: 0; /* Reset default margins */
+}
+
+main {
+    /* Remove flex: 1 if you do not want main to fill the height */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* This will center the main content and keep it to a max width, while aligning text to the left */
+    text-align: left; /* Align text to the left */
+}
