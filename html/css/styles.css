@@ -101,10 +101,12 @@ footer ul li a img {
     header nav ul {
         flex-direction: column; /* Stack the navigation items */
         align-items: center; /* Center-align the items */
+        
+
     }
 
     header nav ul li a {
-        font-size: 4.2rem; /* Increase font size for readability */
+        font-size: 1rem; /* Increase font size for readability */
         /* Additional styling if necessary */
     }
 

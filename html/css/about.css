@@ -14,38 +14,13 @@ body {
 }
 
 main {
-    flex: 1; /* Allows main to expand and take up available space */
-    padding: 2rem;
+    flex: 1;
+    padding: 2rem; /* Adjust padding as needed */
     max-width: 1200px;
-    margin: 0 auto; /* Centers the main content */
-    text-align: left; /* Keeps text aligned to the left */
+    margin-right: auto; /* Only apply margin to the right */
+    margin-left: 3.5rem; /* Adjust left margin to give some space from the edge */
 }
 
-/* Existing styles... */
 
-@media only screen and (max-width: 480px) {
-    header nav ul li a {
-        font-size: 3.2rem; /* Increase font size for readability */
-    }
 
-    main {
-        padding: 1rem;
-        max-width: 100%; /* Make main take full width */
-        margin: 0; /* Reset margin to align with the edge of the screen */
-    }
 
-    footer {
-        padding: 0.5rem 1rem; /* Adjust padding for footer */
-    }
-    /* Other styles as needed */
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Adjust styles for tablets */
-    main {
-        padding: 1.5rem;
-    }
-    /* Other styles as needed */
-}
-
-/* No need for media query for large screens if your default styles cater to them */
