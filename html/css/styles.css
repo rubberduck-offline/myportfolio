@@ -97,12 +97,10 @@ footer ul li a img {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 450px) {
     header nav ul {
         flex-direction: column; /* Stack the navigation items */
         align-items: center; /* Center-align the items */
-        
-
     }
 
     header nav ul li a {
@@ -128,12 +126,12 @@ footer ul li a img {
     main {
         padding: 1.5rem; /* Adjust padding */
     }
-    /* Other styles as needed */
+
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
     /* Adjust styles for large screens (desktops) */
-    /* This may not be necessary if your default styles are already for desktops */
+    
 }
 
 

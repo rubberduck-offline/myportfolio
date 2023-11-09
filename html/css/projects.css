@@ -25,3 +25,10 @@
 .project-link article:hover {
     transform: translateY(-5px); /* Raises the article slightly on hover */
 }
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

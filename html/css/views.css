@@ -55,11 +55,16 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Larger shadow when hovered */
 }
 
-@media (max-width: 768px) {
-    .blog-layout {
-        grid-template-columns: 1fr; /* Stack sidebar and main content on smaller screens */
+@media only screen and (max-width: 660px) {
+   .blog-layout {
+        grid-template-columns: 200px 1fr; /* Adjust sidebar and content layout */
     }
-    #category-filter {
-        margin-bottom: 1rem; /* Space between the now-stacked sidebar and content */
+
+    .blog-post {
+        flex-basis: calc(50% - 1rem); /* Adjust to show two posts per row */
+    }
+    
+    .blog-post img {
+        height: auto; /* Adjust height to be auto for better aspect ratio */
     }
 }

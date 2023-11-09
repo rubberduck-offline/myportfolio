@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Aileen's Portfolio Website</title>
@@ -7,11 +8,14 @@
     <link rel="stylesheet" href="css/views.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Dive into Aileen Fong's thoughts on various topics, from web development trends to personal insights.">
+    <meta name="description"
+        content="Dive into Aileen Fong's thoughts on various topics, from web development trends to personal insights.">
     <meta property="og:title" content="Aileen's Views">
-    <meta property="og:description" content="Aileen Fong shares her perspective on a variety of subjects, offering unique insights and reflections.">
+    <meta property="og:description"
+        content="Aileen Fong shares her perspective on a variety of subjects, offering unique insights and reflections.">
     <meta property="og:image" content="path_to_views_thumbnail_image.jpg">
 </head>
+
 <body>
     <header>
         <nav>
@@ -25,7 +29,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <main class="blog-layout">
         <aside id="category-filter">
             <h3>Categories</h3>
@@ -40,7 +44,11 @@
         <section class="blog-posts">
             <article class="blog-post" data-category="English">
                 <a href="path-to-full-blog-post.html" class="blog-link" aria-label="Read more about Blog Post Title">
-                    <img src="path_to_image.jpg" alt="Brief description of image">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="images/cleo.jpg" width="100">
+                        <source media="(max-width: 768px)" srcset="images/cleo.jpg" width="150">
+                        <img src="images/cleo.jpg" alt="Brief description of image" width="200" loading="lazy">
+                    </picture>   
                     <div>
                         <h2>Blog Post Title</h2>
                         <p>A short introduction or description of the blog post.</p>
@@ -54,7 +62,11 @@
             <!-- Repeat for other blog posts -->
             <article class="blog-post" data-category="Chinese">
                 <a href="path-to-full-blog-post.html" class="blog-link" aria-label="Read more about Blog Post Title">
-                    <img src="path_to_image.jpg" alt="Brief description of image">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="images/cleo.jpg" width="100">
+                        <source media="(max-width: 768px)" srcset="images/cleo.jpg" width="150">
+                        <img src="images/cleo.jpg" alt="Brief description of image" width="200" loading="lazy">
+                    </picture> 
                     <div>
                         <h2>Blog Post Title</h2>
                         <p>A short introduction or description of the blog post.</p>
@@ -67,7 +79,11 @@
 
             <article class="blog-post" data-category="French">
                 <a href="path-to-full-blog-post.html" class="blog-link" aria-label="Read more about Blog Post Title">
-                    <img src="path_to_image.jpg" alt="Brief description of image">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="images/cleo.jpg" width="100">
+                        <source media="(max-width: 768px)" srcset="images/cleo.jpg" width="150">
+                        <img src="images/cleo.jpg" alt="Brief description of image" width="200" loading="lazy">
+                    </picture> 
                     <div>
                         <h2>Blog Post Title</h2>
                         <p>A short introduction or description of the blog post.</p>
@@ -94,4 +110,5 @@
         <p>&copy; 2023 Aileen Fong</p>
     </footer>
 </body>
+
 </html>
