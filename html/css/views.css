@@ -56,15 +56,26 @@
 }
 
 @media only screen and (max-width: 660px) {
-   .blog-layout {
-        grid-template-columns: 200px 1fr; /* Adjust sidebar and content layout */
+    .blog-layout {
+        grid-template-columns: 1fr; /* Full width for mobile, stack sidebar above content */
+    }
+
+    #category-filter {
+        width: 100%; /* Sidebar should take full width */
+        margin-bottom: 1rem; /* Space between the now-stacked sidebar and content */
+    }
+
+    .blog-posts {
+        width: 100%; /* Ensure the blog posts container takes full width */
     }
 
     .blog-post {
-        flex-basis: calc(50% - 1rem); /* Adjust to show two posts per row */
+        flex-basis: 100%; /* Each post should take full width of the container */
+        max-width: 100%; /* Ensure the post does not exceed the width of the container */
     }
     
     .blog-post img {
         height: auto; /* Adjust height to be auto for better aspect ratio */
     }
 }
+
