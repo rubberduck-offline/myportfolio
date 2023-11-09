@@ -1,13 +1,17 @@
 /* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@400;700&display=swap');
+@import url('global.css');
 
-:root {
-    --primary-font: 'Open Sans', sans-serif;
-    --heading-font: 'Montserrat', sans-serif;
-    --primary-color: #007bff;
-    --text-color: #333;
-    --background-color: #f8f9fa;
-    --border-color: #ddd;
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Make sure html and body are at least the height of the viewport */
+    margin: 0; /* Reset default margins */
 }
 
 body {
@@ -25,6 +29,7 @@ header {
     background: var(--primary-color);
     padding: 1rem;
     color: white;
+    
 }
 
 header nav ul {
@@ -91,19 +96,41 @@ footer ul li a img {
     vertical-align: middle;
 }
 
-@media (max-width: 768px) {
+
+@media only screen and (max-width: 480px) {
+    /* Adjust styles for very small screens */
     header nav ul {
         flex-direction: column;
+        padding: 0;
     }
 
-    header nav ul li {
-        margin-bottom: 0.5rem;
+    header nav ul li a {
+        padding: 0.5rem;
+        font-size: 1rem; /* Adjust font size for smaller screens */
     }
 
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
-    /* and so on for h3, h4... */
+    main {
+        padding: 1rem; /* Reduce padding */
+    }
+
+    footer ul li a img {
+        width: 20px; /* Adjust image size for icons */
+    }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Adjust styles for medium screens (tablets) */
+    main {
+        padding: 1.5rem; /* Adjust padding */
+    }
+    /* Other styles as needed */
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Adjust styles for large screens (desktops) */
+    /* This may not be necessary if your default styles are already for desktops */
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; }
