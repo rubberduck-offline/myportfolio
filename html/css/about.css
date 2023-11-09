@@ -3,7 +3,8 @@
 @import url('global.css');
 
 body {
-    display: block; /* Change display back to default */
+    display: flex; /* Changed to flex to manage layout better */
+    flex-direction: column; /* Stack elements vertically */
     font-family: var(--primary-font);
     color: var(--text-color);
     background-color: var(--background-color);
@@ -13,21 +14,28 @@ body {
 }
 
 main {
-    /* Remove flex: 1 if you do not want main to fill the height */
+    flex: 1; /* Allows main to expand and take up available space */
     padding: 2rem;
     max-width: 1200px;
-    margin: 0 auto; /* This will center the main content and keep it to a max width, while aligning text to the left */
-    text-align: left; /* Align text to the left */
+    margin: 0 auto; /* Centers the main content */
+    text-align: left; /* Keeps text aligned to the left */
 }
 
 /* Existing styles... */
 
 @media only screen and (max-width: 480px) {
+    header nav ul li a {
+        font-size: 1.2rem; /* Increase font size for readability */
+    }
+
     main {
         padding: 1rem;
         max-width: 100%; /* Make main take full width */
         margin: 0; /* Reset margin to align with the edge of the screen */
-        text-align: left; /* Keep text aligned left for readability */
+    }
+
+    footer {
+        padding: 0.5rem 1rem; /* Adjust padding for footer */
     }
     /* Other styles as needed */
 }
@@ -40,7 +48,4 @@ main {
     /* Other styles as needed */
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-    /* Adjust styles for large screens */
-    /* This may not be necessary if your default styles are already for desktops */
-}
+/* No need for media query for large screens if your default styles cater to them */
