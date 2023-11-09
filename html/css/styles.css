@@ -98,25 +98,28 @@ footer ul li a img {
 
 
 @media only screen and (max-width: 480px) {
-    /* Adjust styles for very small screens */
     header nav ul {
-        flex-direction: column;
-        padding: 0;
+        flex-direction: column; /* Stack the navigation items */
+        align-items: center; /* Center-align the items */
     }
 
     header nav ul li a {
-        padding: 0.5rem;
-        font-size: 1rem; /* Adjust font size for smaller screens */
+        font-size: 3.2rem; /* Increase font size for readability */
+        /* Additional styling if necessary */
     }
 
+    /* Adjustments for main and footer */
     main {
-        padding: 1rem; /* Reduce padding */
+        padding: 1rem;
+        max-width: 100%;
+        margin: 0;
     }
 
-    footer ul li a img {
-        width: 20px; /* Adjust image size for icons */
+    footer {
+        padding: 0.5rem 1rem;
     }
 }
+
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     /* Adjust styles for medium screens (tablets) */
@@ -136,3 +139,4 @@ footer ul li a img {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
