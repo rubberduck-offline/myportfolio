@@ -13,6 +13,12 @@ body {
     margin: 0; /* Reset default margins */
 }
 
+header {
+    background-color: var(--mixed-color);
+    /* fallback for browsers that don't support color-mix() */
+    background-color: purple; /* A simple fallback */
+}
+
 main {
     flex: 1;
     padding: 2rem; /* Adjust padding as needed */

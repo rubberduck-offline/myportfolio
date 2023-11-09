@@ -10,8 +10,8 @@
 }
 
 html, body {
-    height: 100%; /* Make sure html and body are at least the height of the viewport */
-    margin: 0; /* Reset default margins */
+    height: 100%;
+    margin: 0;
 }
 
 body {
@@ -25,11 +25,34 @@ body {
     margin: 0;
 }
 
+/* Hide the checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Default styles for larger screens */
+.hamburger {
+    display: none;
+}
+
+.menu {
+    /* Menu styles for larger screens */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+}
+
 header {
     background: var(--primary-color);
     padding: 1rem;
     color: white;
-    
 }
 
 header nav ul {
@@ -96,19 +119,32 @@ footer ul li a img {
     vertical-align: middle;
 }
 
-
+/* Media query for mobile devices */
 @media only screen and (max-width: 450px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        /* additional styles for the hamburger icon */
+    }
+
+    .menu {
+        display: none;
+        /* Hide the menu on mobile devices */
+    }
+
+    /* Show menu when hamburger is clicked (checked) */
+    #menu-toggle:checked + .hamburger + .menu {
+        display: block;
+    }
+
     header nav ul {
-        flex-direction: column; /* Stack the navigation items */
-        align-items: center; /* Center-align the items */
+        flex-direction: column;
     }
 
     header nav ul li a {
-        font-size: 1rem; /* Increase font size for readability */
-        /* Additional styling if necessary */
+        font-size: 1rem;
     }
 
-    /* Adjustments for main and footer */
     main {
         padding: 1rem;
         max-width: 100%;
@@ -120,23 +156,9 @@ footer ul li a img {
     }
 }
 
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Adjust styles for medium screens (tablets) */
-    main {
-        padding: 1.5rem; /* Adjust padding */
-    }
-
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-    /* Adjust styles for large screens (desktops) */
-    
-}
-
+/* Media queries for tablets and desktops remain unchanged */
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-

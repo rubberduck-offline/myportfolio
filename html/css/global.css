@@ -7,4 +7,7 @@
     --text-color: #333;
     --background-color: #f8f9fa;
     --border-color: #ddd;
+
+    --primary-color: color(display-p3 0 0.5 1); /* A color in the P3 color space */
+    --mixed-color: color-mix(in sRGB, red 50%, blue 50%);
 }

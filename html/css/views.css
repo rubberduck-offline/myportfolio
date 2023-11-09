@@ -79,3 +79,20 @@
     }
 }
 
+#category-filter:has(h3) {
+    opacity: 100%;
+}
+
+@layer first_color, base;
+
+@layer first_color {
+    #category-filter {
+        border: 1px solid green;
+    }
+}
+
+@layer base {
+    #category-filter {
+        border: 1px solid blue;
+    }
+}
