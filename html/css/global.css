@@ -11,3 +11,50 @@
     --primary-color: color(display-p3 0 0.5 1); /* A color in the P3 color space */
     --mixed-color: color-mix(in sRGB, red 50%, blue 50%);
 }
+
+.dark-mode {
+    --primary-font: 'Open Sans', Arial, sans-serif;
+    --heading-font: 'Montserrat', 'Helvetica Neue', sans-serif;
+    --primary-color: #007bff;
+    --text-color: #f8f9fa;
+    --background-color: #808080;
+    --border-color: #ddd;
+
+    --primary-color: color(display-p3 0 0.5 1); /* A color in the P3 color space */
+    --mixed-color: color-mix(in sRGB, red 50%, blue 50%);
+}
+
+/* theme-picker */
+
+#theme-picker {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#theme-picker label {
+    margin-right: 10px;
+}
+
+#custom-theme-options {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#custom-theme-options label,
+#custom-theme-options select,
+#custom-theme-options input {
+    margin-right: 10px;
+}
+
+#theme-preview {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#theme-preview h2 {
+    margin-bottom: 10px;
+}
+

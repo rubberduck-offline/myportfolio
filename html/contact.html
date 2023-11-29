@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <header>
         <!-- Hidden checkbox, used to handle the menu toggle -->
         <input type="checkbox" id="menu-toggle" />
@@ -36,30 +35,112 @@
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
+        
     </header>
 
     <main>
         <h1>Contact Me</h1>
-
-        <form action="javascript:void(0);">
+        <form id="contact-form" action="https://httpbin.org/post" method="post">
 
             <div class="form-field">
-                <!-- Title Field -->
-                <label for="title"></label>
-                <input type="text" id="title" name="title" placeholder="Enter your subject" required>
+                <!-- Name Field -->
+                <label for="name">Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+                <output for="name" id="name-error"></output>
 
-                <!-- Message Field -->
-                <textarea id="message" name="message" rows="5" placeholder="Enter your message here..."
-                    required></textarea>
+                <!-- Email Field -->
+                <label for="email">Email: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <output for="email" id="email-error"></output>
+
+                <!-- Comments Field -->
+                <label for="comments">Comments: <span class="required">*</span></label>
+                <textarea id="comments" name="comments" rows="5" required></textarea>
+                <output for="comments" id="comments-error"></output>
+
+                <!-- Hidden Field -->
+                <input type="hidden" name="possible_bot" value="true">
+
+                <!-- Info Output -->
+                <output for="comments" id="info-message"></output>
 
                 <!-- Submit Button -->
                 <button id="submit-button" type="submit">Submit</button>
             </div>
 
         </form>
+        
     </main>
 
+    <script>
+        // JavaScript for form validation and submission
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            // Validate fields using Constraint Validation API
+            const form = event.target;
+            const nameField = form.elements.name;
+            const emailField = form.elements.email;
+            const commentsField = form.elements.comments;
+
+            if (!nameField.checkValidity() || !emailField.checkValidity() || !commentsField.checkValidity()) {
+                event.preventDefault(); // Prevent form submission
+
+                // Clear info message
+                document.getElementById('info-message').textContent = '';
+
+                // Display custom validation messages
+                document.getElementById('name-error').textContent = nameField.validationMessage;
+                document.getElementById('email-error').textContent = emailField.validationMessage;
+                document.getElementById('comments-error').textContent = commentsField.validationMessage;
+            } else {
+                // Form submission logic (send to https://httpbin.org)
+                document.getElementById('info-message').textContent = 'Form submitted successfully!';
+            }
+        });
+
+        // Masking mechanism for disallowed characters
+        document.getElementById('comments').addEventListener('input', function (event) {
+            const commentsField = event.target;
+            const sanitizedValue = commentsField.value.replace(/[^a-zA-Z0-9\s]/g, '');
+
+            if (commentsField.value !== sanitizedValue) {
+                commentsField.value = sanitizedValue;
+
+                // Flash the field to indicate illegal character
+                commentsField.classList.add('illegal-character-flash');
+                
+                // Display error message
+                document.getElementById('comments-error').textContent = 'Illegal characters removed.';
+
+                // Fade out the error message after a few moments
+                setTimeout(function () {
+                    commentsField.classList.remove('illegal-character-flash');
+                    document.getElementById('comments-error').textContent = '';
+                }, 2000);
+            }
+        });
+
+        // Character countdown feature for comments textarea
+        document.getElementById('comments').addEventListener('input', function (event) {
+            const commentsField = event.target;
+            const maxLength = 200;
+            const remainingCharacters = maxLength - commentsField.value.length;
+
+            // Display character count in the info message area
+            document.getElementById('info-message').textContent = `Characters remaining: ${remainingCharacters}`;
+
+            // Change style to warn and then error as it gets close to the character limit
+            if (remainingCharacters <= 20) {
+                document.getElementById('info-message').style.color = remainingCharacters <= 10 ? 'red' : 'orange';
+            } else {
+                document.getElementById('info-message').style.color = '';
+            }
+        });
+    </script>
+
     <footer>
+        <script src="js/theme.js"></script>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+
         <ul>
             <li><a href="https://www.instagram.com/yourInstagramUsername/" target="_blank"
                     rel="noopener noreferrer"><img src="images/instagram.svg" alt="Instagram icon"> Instagram</a>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aileen's Portfolio Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Reach out to Aileen Fong for collaborations, inquiries, or just to say hello.">
+    <meta property="og:title" content="Contact Aileen Fong">
+    <meta property="og:description"
+        content="Looking to get in touch with Aileen Fong? Find all contact methods and details here.">
+    <meta property="og:image" content="path_to_contact_thumbnail_image.jpg">
+
+    <style>
+        /* CSS for form validation */
+        input:required,
+        textarea:required {
+            border: 1px solid #ccc;
+        }
+
+        input:invalid,
+        textarea:invalid {
+            border: 1px solid red;
+        }
+
+        input:valid,
+        textarea:valid {
+            border: 1px solid green;
+        }
+
+        input:required:invalid,
+        textarea:required:invalid {
+            background-image: url('images/error.png');
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+
+        input:focus:invalid,
+        textarea:focus:invalid {
+            outline: none;
+            border-color: red;
+        }
+
+        #name-error:empty,
+        #email-error:empty,
+        #comments-error:empty {
+            display: none;
+        }
+
+        #info-message:empty {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Hidden checkbox, used to handle the menu toggle -->
+        <input type="checkbox" id="menu-toggle" />
+
+        <!-- Hamburger icon -->
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+        <!-- The navigation menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="./index.html">About</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./views.html">Views</a></li>
+                <li><a href="./curiosity.html">Curiosity</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Me</h1>
+
+        <form id="contact-form" action="https://httpbin.org/post" method="post">
+
+            <div class="form-field">
+                <!-- Name Field -->
+                <label for="name">Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+
+                <!-- Email Field -->
+                <label for="email">Email: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Comments Field -->
+                <label for="comments">Comments: <span class="required">*</span></label>
+                <textarea id="comments" name="comments" rows="5" required></textarea>
+
+                <!-- Error and Info Output -->
+                <output for="name" id="name-error"></output>
+                <output for="email" id="email-error"></output>
+                <output for="comments" id="comments-error"></output>
+                <output for="comments" id="info-message"></output>
+
+                <!-- Submit Button -->
+                <button id="submit-button" type="submit">Submit</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://www.instagram.com/yourInstagramUsername/" target="_blank"
+                    rel="noopener noreferrer"><img src="images/instagram.svg" alt="Instagram icon"> Instagram</a>
+            </li>
+            <li><a href="https://github.com/yourGithubUsername" target="_blank" rel="noopener noreferrer"><img
+                        src="images/github.svg" alt="GitHub icon"> GitHub</a></li>
+            <li><a href="https://medium.com/@yourMediumUsername" target="_blank" rel="noopener noreferrer"><img
+                        src="images/medium.svg" alt="Medium icon"> Medium</a></li>
+        </ul>
+        <p>&copy; 2023 Aileen Fong</p>
+    </footer>
+
+
+</body>
