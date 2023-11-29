@@ -35,7 +35,7 @@
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
-        
+
     </header>
 
     <main>
@@ -46,22 +46,19 @@
                 <!-- Name Field -->
                 <label for="name">Name: <span class="required">*</span></label>
                 <input type="text" id="name" name="name" required>
-                <output for="name" id="name-error"></output>
 
                 <!-- Email Field -->
                 <label for="email">Email: <span class="required">*</span></label>
                 <input type="email" id="email" name="email" required>
-                <output for="email" id="email-error"></output>
 
                 <!-- Comments Field -->
                 <label for="comments">Comments: <span class="required">*</span></label>
                 <textarea id="comments" name="comments" rows="5" required></textarea>
+
+                <!-- Error and Info Output -->
+                <output for="name" id="name-error"></output>
+                <output for="email" id="email-error"></output>
                 <output for="comments" id="comments-error"></output>
-
-                <!-- Hidden Field -->
-                <input type="hidden" name="possible_bot" value="true">
-
-                <!-- Info Output -->
                 <output for="comments" id="info-message"></output>
 
                 <!-- Submit Button -->
@@ -69,29 +66,51 @@
             </div>
 
         </form>
-        
     </main>
 
     <script>
-        // JavaScript for form validation and submission
+
+        // Declare formErrors array outside the submit event listener
+        let formErrors = [];
+
         document.getElementById('contact-form').addEventListener('submit', function (event) {
-            // Validate fields using Constraint Validation API
             const form = event.target;
             const nameField = form.elements.name;
             const emailField = form.elements.email;
             const commentsField = form.elements.comments;
 
+            // Clear the existing errors array
+            formErrors = [];
+
+            // Check validity and log errors
             if (!nameField.checkValidity() || !emailField.checkValidity() || !commentsField.checkValidity()) {
                 event.preventDefault(); // Prevent form submission
 
-                // Clear info message
-                document.getElementById('info-message').textContent = '';
+                if (!nameField.checkValidity()) {
+                    formErrors.push({ field: "name", message: nameField.validationMessage });
+                    document.getElementById('name-error').textContent = nameField.validationMessage;
+                }
+                if (!emailField.checkValidity()) {
+                    formErrors.push({ field: "email", message: emailField.validationMessage });
+                    document.getElementById('email-error').textContent = emailField.validationMessage;
+                }
+                if (!commentsField.checkValidity()) {
+                    formErrors.push({ field: "comments", message: commentsField.validationMessage });
+                    document.getElementById('comments-error').textContent = commentsField.validationMessage;
+                }
+            }
 
-                // Display custom validation messages
-                document.getElementById('name-error').textContent = nameField.validationMessage;
-                document.getElementById('email-error').textContent = emailField.validationMessage;
-                document.getElementById('comments-error').textContent = commentsField.validationMessage;
-            } else {
+            // Append the hidden input for form errors
+            let errorsInput = form.querySelector('input[name="form-errors"]');
+            if (!errorsInput) {
+                errorsInput = document.createElement('input');
+                errorsInput.type = 'hidden';
+                errorsInput.name = 'form-errors';
+                form.appendChild(errorsInput);
+            }
+            errorsInput.value = JSON.stringify(formErrors);
+
+            if (formErrors.length === 0) {
                 // Form submission logic (send to https://httpbin.org)
                 document.getElementById('info-message').textContent = 'Form submitted successfully!';
             }
@@ -100,14 +119,15 @@
         // Masking mechanism for disallowed characters
         document.getElementById('comments').addEventListener('input', function (event) {
             const commentsField = event.target;
-            const sanitizedValue = commentsField.value.replace(/[^a-zA-Z0-9\s]/g, '');
+            const sanitizedValue = commentsField.value.replace(/[^a-zA-Z0-9\s.,;:!?\-]/g, '');
+
 
             if (commentsField.value !== sanitizedValue) {
                 commentsField.value = sanitizedValue;
 
                 // Flash the field to indicate illegal character
                 commentsField.classList.add('illegal-character-flash');
-                
+
                 // Display error message
                 document.getElementById('comments-error').textContent = 'Illegal characters removed.';
 
